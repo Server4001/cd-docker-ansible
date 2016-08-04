@@ -10,4 +10,6 @@ fi
 
 # User specific aliases and functions
 alias ll="ls -lah"
-
+alias gst="git status"
+alias gb="git branch"
+alias gpo="git push origin"

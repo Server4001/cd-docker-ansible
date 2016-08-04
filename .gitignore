@@ -1,3 +1,13 @@
+# Editor.
 .idea
+
+# Vagrant and virtual environment.
 .vagrant
+todobackend/**/venv
+
+# Compiled Python source files.
+todobackend/**/*.pyc
+
+# SQLite database files.
+todobackend/**/*.sqlite3
 
