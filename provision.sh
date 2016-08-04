@@ -17,10 +17,18 @@ sudo chmod +x /usr/bin/docker-compose
 sudo chown root: /usr/bin/docker-compose
 
 # Install ansible.
-sudo yum install -y ansible1.9 libselinux-python
+sudo yum install -y ansible libselinux-python
 
 # Install NTP.
 sudo yum install -y ntp
 sudo cp /vagrant/config/ntp/ntp.conf /etc/ntp.conf
 sudo systemctl start ntpd
 sudo systemctl enable ntpd
+
+# Install PIP.
+sudo yum -y install python-pip
+sudo pip install --upgrade pip
+
+# Install Boto and AWS CLI.
+sudo pip install boto boto3
+sudo pip install awscli
