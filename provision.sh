@@ -29,7 +29,6 @@ sudo systemctl enable ntpd
 sudo yum -y install python-pip
 sudo pip install --upgrade pip
 
-# Install Boto, AWS CLI, etc.
-sudo pip install boto boto3
-sudo pip install awscli
-sudo pip install django
+# Install Python packages.
+sudo pip install boto boto3 awscli
+sudo pip install django virtualenv djangorestframework django-cors-headers
