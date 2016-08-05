@@ -1,5 +1,54 @@
 #!/usr/bin/env bash
 
+# Python 3.4 install.
+sudo yum groupinstall -y 'development tools'
+sudo yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel
+cd /usr/src
+sudo wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
+sudo tar xzf Python-3.4.4.tgz
+sudo rm Python-3.4.4.tgz
+cd Python-3.4.4/
+./configure
+make
+sudo make altinstall
+sudo ln -s /usr/local/bin/python3.4 /usr/bin/python3.4
+sudo ln -s /usr/local/bin/pip3.4 /usr/bin/pip3.4
+sudo ln -s /usr/local/bin/easy_install-3.4 /usr/bin/easy_install-3.4
+cd /usr/src
+sudo rm -rf Python-3.4.4/
+sudo pip3.4 install --upgrade pip
+
+
+
+
+
+# Python 3.3 install.
+#sudo yum groupinstall -y 'development tools'
+#sudo yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel
+#wget http://www.python.org/ftp/python/3.3.3/Python-3.3.3.tar.xz
+#xz -d Python-3.3.3.tar.xz
+#tar -xvf Python-3.3.3.tar
+#rm Python-3.3.3.tar
+#cd Python-3.3.3/
+#./configure
+#make
+#sudo make altinstall
+#cd /home/vagrant
+#sudo rm -rf Python-3.3.3/
+#sudo ln -s /usr/local/bin/python3.3 /bin/python3.3
+
+# Install Setup tools and PIP for Python 3.
+#wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-1.4.2.tar.gz
+#tar -xvf setuptools-1.4.2.tar.gz
+#rm setuptools-1.4.2.tar.gz
+#cd setuptools-1.4.2/
+#sudo python3.3 setup.py install
+#sudo ln -s /usr/local/bin/easy_install /usr/bin/easy_install
+#cd /home/vagrant
+#sudo rm -rf setuptools-1.4.2/
+#sudo easy_install pip
+#sudo ln -s /usr/local/bin/pip /usr/bin/pip
+
 # Bashrc.
 sudo cp /vagrant/config/bash/root.bashrc /root/.bashrc
 cp /vagrant/config/bash/vagrant.bashrc /home/vagrant/.bashrc
@@ -25,10 +74,6 @@ sudo cp /vagrant/config/ntp/ntp.conf /etc/ntp.conf
 sudo systemctl start ntpd
 sudo systemctl enable ntpd
 
-# Install PIP.
-sudo yum -y install python-pip
-sudo pip install --upgrade pip
-
 # Install Python packages.
-sudo pip install boto boto3 awscli
-sudo pip install django virtualenv djangorestframework django-cors-headers
+# sudo pip install virtualenv boto boto3 awscli django djangorestframework django-cors-headers
+sudo pip3.4 install virtualenv boto boto3 awscli django djangorestframework django-cors-headers
