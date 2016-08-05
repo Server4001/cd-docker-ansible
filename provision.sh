@@ -46,3 +46,17 @@ sudo systemctl enable ntpd
 
 # Install Python packages.
 sudo pip3.4 install virtualenv boto boto3 awscli django djangorestframework django-cors-headers
+
+# Install nginx.
+sudo yum install -y nginx
+sudo cp /vagrant/config/nginx/nginx.conf /etc/nginx/nginx.conf
+sudo cp /vagrant/config/nginx/python.conf /etc/nginx/conf.d/python.conf
+sudo rm -rf /etc/nginx/default.d
+
+# Create www log folder.
+sudo mkdir /var/log/www
+sudo chown nginx:nginx /var/log/www/
+
+# Start nginx.
+sudo systemctl start nginx
+sudo systemctl enable nginx
