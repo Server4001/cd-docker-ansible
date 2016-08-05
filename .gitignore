@@ -11,3 +11,5 @@ todobackend/**/*.pyc
 # SQLite database files.
 todobackend/**/*.sqlite3
 
+# Node.js
+nodebackend/node_modules

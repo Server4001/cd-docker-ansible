@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+filename="/var/nodebackend/nodebackend.pid"
+
+if [ ! -f ${filename} ]; then
+    echo "PID file at ${filename} does not exist!"
+    exit 1
+fi
+
+pid=$(<${filename})
+
+kill -SIGHUP ${pid}

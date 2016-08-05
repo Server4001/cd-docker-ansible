@@ -1,0 +1,18 @@
+{
+    "name": "nodebackend",
+    "version": "0.1.0",
+    "description": "TODO backend app written in Node.js and Express.js",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "/usr/local/bin/node server.js",
+        "dev": "nodemon -L server.js"
+    },
+    "author": "Brice Bentler",
+    "license": "MIT",
+    "repository": "git@github.com:Server4001/cd-docker-ansible.git",
+    "dependencies": {
+        "express": "4.14.0",
+        "morgan": "1.7.0"
+    }
+}
