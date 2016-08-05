@@ -19,6 +19,4 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('todo.urls')),
-    # TODO : If the above doesn't work, try:
-    # url(r'^', todo.urls),
 ]
