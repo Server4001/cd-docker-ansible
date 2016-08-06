@@ -9,7 +9,7 @@ module.exports = (function() {
         /**
          * Delete the PID file from disk, if it exists.
          *
-         * @param {object }fs - The file system module in Node.
+         * @param {object} fs - The file system module in Node.
          * @param {string} pidFile - File path to the file containing an old process's PID.
          *
          * @returns {boolean} - Did we actually delete a file?

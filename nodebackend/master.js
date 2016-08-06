@@ -18,7 +18,7 @@ process.on('SIGHUP', () => {
     console.log('[' + new Date().toString() + '] Reloading...');
     const new_worker = cluster.fork();
 
-    new_worker.once('listening',  () => {
+    new_worker.once('listening', () => {
         for(let id in cluster.workers) {
             if (id === new_worker.id.toString()) {
                 continue;
