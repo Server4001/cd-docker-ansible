@@ -47,11 +47,27 @@ sudo systemctl enable ntpd
 # Install Python packages.
 sudo pip3.4 install virtualenv boto boto3 awscli django djangorestframework django-cors-headers
 
+# Install Node.js.
+wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.gz --no-check-certificate
+sudo tar --strip-components 1 -xzvf node-v4.4.7-linux-x64.tar.gz -C /usr/local
+rm /home/vagrant/node-v4.4.7-linux-x64.tar.gz
+
+# Symlink Node.js for root.
+sudo ln -s /usr/local/bin/npm /usr/bin/npm
+sudo ln -s /usr/local/bin/node /usr/bin/node
+
+# Install global NPM packages.
+sudo npm install -g mocha
+
 # Install nginx.
 sudo yum install -y nginx
 sudo cp /vagrant/config/nginx/nginx.conf /etc/nginx/nginx.conf
 sudo cp /vagrant/config/nginx/python.conf /etc/nginx/conf.d/python.conf
 sudo rm -rf /etc/nginx/default.d
+
+# Create folder for nodebackend pid file.
+sudo mkdir /var/nodebackend
+sudo chown vagrant: /var/nodebackend
 
 # Create www log folder.
 sudo mkdir /var/log/www
