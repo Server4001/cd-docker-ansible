@@ -70,7 +70,7 @@ sudo pip install mysql-python
 # Install nginx.
 sudo yum install -y nginx
 sudo cp /vagrant/config/nginx/nginx.conf /etc/nginx/nginx.conf
-sudo cp /vagrant/config/nginx/python.conf /etc/nginx/conf.d/python.conf
+sudo cp /vagrant/config/nginx/todobackend.conf /etc/nginx/conf.d/todobackend.conf
 sudo rm -rf /etc/nginx/default.d
 
 # Create folder for nodebackend pid file.
