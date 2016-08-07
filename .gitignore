@@ -13,3 +13,9 @@ todobackend/**/*.sqlite3
 
 # Node.js
 nodebackend/node_modules
+todobackend-specs/node_modules
+
+# Python test reports.
+todobackend/src/.coverage
+todobackend/src/coverage.xml
+todobackend/src/unittests.xml
