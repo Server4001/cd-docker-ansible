@@ -42,7 +42,7 @@ sudo ln -s /usr/local/bin/npm /usr/bin/npm
 sudo ln -s /usr/local/bin/node /usr/bin/node
 
 # Install global NPM packages.
-sudo npm install -g mocha
+sudo npm install -g mocha grunt-cli bower
 
 # Install MySQL.
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
