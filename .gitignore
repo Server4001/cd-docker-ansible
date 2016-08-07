@@ -14,8 +14,16 @@ todobackend/**/*.sqlite3
 # Node.js
 nodebackend/node_modules
 todobackend-specs/node_modules
+todobackend-client/node_modules
 
 # Python test reports.
 todobackend/src/.coverage
 todobackend/src/coverage.xml
 todobackend/src/unittests.xml
+
+# Bower.
+todobackend-client/bower_components
+
+# Client side assets.
+todobackend-client/public/js/vendor
+todobackend-client/public/css/vendor
