@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
 # Python 3.4 install.
-sudo yum groupinstall -y 'development tools'
-sudo yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel
-cd /usr/src
-sudo wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
-sudo tar xzf Python-3.4.4.tgz
-sudo rm Python-3.4.4.tgz
-cd Python-3.4.4/
-./configure
-make
-sudo make altinstall
-sudo ln -s /usr/local/bin/python3.4 /usr/bin/python3.4
-sudo ln -s /usr/local/bin/pip3.4 /usr/bin/pip3.4
-sudo ln -s /usr/local/bin/easy_install-3.4 /usr/bin/easy_install-3.4
-cd /usr/src
-sudo rm -rf Python-3.4.4/
-sudo pip3.4 install --upgrade pip
-cd /home/vagrant
+if [ ! -f /usr/local/bin/python3.4 ]; then
+    sudo yum groupinstall -y 'development tools'
+    sudo yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel
+    cd /usr/src
+    sudo wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
+    sudo tar xzf Python-3.4.4.tgz
+    sudo rm Python-3.4.4.tgz
+    cd Python-3.4.4/
+    ./configure
+    make
+    sudo make altinstall
+    sudo ln -s /usr/local/bin/python3.4 /usr/bin/python3.4
+    sudo ln -s /usr/local/bin/pip3.4 /usr/bin/pip3.4
+    sudo ln -s /usr/local/bin/easy_install-3.4 /usr/bin/easy_install-3.4
+    cd /usr/src
+    sudo rm -rf Python-3.4.4/
+    sudo pip3.4 install --upgrade pip
+    cd $HOME
+fi
 
 # Bashrc.
 sudo cp /vagrant/config/bash/root.bashrc /root/.bashrc
