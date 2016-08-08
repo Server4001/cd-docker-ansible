@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/ash
 . /appenv/bin/activate
 exec $@
