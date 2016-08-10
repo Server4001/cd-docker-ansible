@@ -13,3 +13,8 @@ alias ll="ls -lah"
 alias gst="git status"
 alias gb="git branch"
 alias gpo="git push origin"
+
+docker_rm_containers() {
+    docker rm $(docker ps -aq)
+}
+
