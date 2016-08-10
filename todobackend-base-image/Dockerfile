@@ -4,7 +4,6 @@ MAINTAINER Brice Bentler <me@bricebentler.com>
 
 RUN apk add --update \
     python \
-    python-dev \
     py-pip \
     build-base \
 && pip install virtualenv \
