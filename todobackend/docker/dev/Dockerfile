@@ -1,10 +1,11 @@
-FROM server4001/todobackend-base:0.1.0
+FROM server4001/todobackend-base:0.2.0
 
 MAINTAINER Brice Bentler <me@bricebentler.com>
 
 # Install dev/build dependencies.
 RUN apk add --update \
-    python-dev
+    python-dev \
+    mariadb-dev
 
 # Activate virtual environment and install wheel support.
 RUN . /appenv/bin/activate && \
@@ -20,7 +21,7 @@ VOLUME /wheelhouse
 VOLUME /reports
 
 # Add test entrypoint script.
-COPY scripts/test.sh /usr/local/bin/test.sh
+COPY docker/dev/scripts/test.sh /usr/local/bin/test.sh
 RUN chmod +x /usr/local/bin/test.sh
 
 # Set defaults for entrypoint and command string.
