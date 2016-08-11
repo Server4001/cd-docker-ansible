@@ -15,7 +15,7 @@ sudo pip install --upgrade pip
 sudo pip install virtualenv boto boto3 awscli django djangorestframework django-cors-headers django-nose pinocchio coverage
 
 # Install vim, tree, etc.
-sudo yum install -y vim tree git man man-pages
+sudo yum install -y vim tree git man man-pages time
 
 # Install Docker Compose.
 curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > docker-compose
