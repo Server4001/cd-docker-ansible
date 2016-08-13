@@ -17,6 +17,8 @@ services:
       - MYSQL_USER
       - MYSQL_PASSWORD
       - TEST_OUTPUT_DIR
+    depends_on:
+      - db
 
   cache:
     build:
