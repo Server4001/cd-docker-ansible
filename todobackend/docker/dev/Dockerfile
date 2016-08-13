@@ -24,6 +24,10 @@ VOLUME /reports
 COPY docker/dev/scripts/test.sh /usr/local/bin/test.sh
 RUN chmod +x /usr/local/bin/test.sh
 
+# Add dockerize, for waiting on service availability.
+COPY docker/dev/scripts/dockerize-linux-amd64-v0.2.0.tar.gz /usr/lib/dockerize-linux-amd64-v0.2.0.tar.gz
+RUN tar -C /usr/local/bin -xzvf /usr/lib/dockerize-linux-amd64-v0.2.0.tar.gz && rm /usr/lib/dockerize-linux-amd64-v0.2.0.tar.gz
+
 # Set defaults for entrypoint and command string.
 ENTRYPOINT ["test.sh"]
 CMD ["python", "manage.py", "test", "--noinput"]
