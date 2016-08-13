@@ -27,3 +27,6 @@ todobackend-client/bower_components
 # Client side assets.
 todobackend-client/public/js/vendor
 todobackend-client/public/css/vendor
+
+# Docker
+todobackend/docker/dev/.env
