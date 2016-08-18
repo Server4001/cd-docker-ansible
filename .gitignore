@@ -30,3 +30,6 @@ todobackend-client/public/css/vendor
 
 # Docker
 todobackend/docker/dev/.env
+
+# Builds
+/todobackend/target
